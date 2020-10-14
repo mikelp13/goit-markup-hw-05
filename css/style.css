@@ -15,6 +15,7 @@
   --transparent-color: rgba(47, 48, 58, 0.8);
   --backdrop-color: rgba(0, 0, 0, 0.2);
   --close-btn-color: rgba(0, 0, 0, 0.1);
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -136,6 +137,7 @@ h6 {
   background-color: var(--accent-color);
   border-radius: 2px;
   opacity: 0;
+  transition: opacity 250ms var(--timing-function);
 }
 
 .navigation__list-link--active::after,
@@ -561,25 +563,8 @@ h6 {
 .projects__list-card-link {
   text-decoration: none;
   display: block;
-
   position: relative;
-}
-
-.projects__list-card-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  margin: 0;
-  padding: 63px 24px;
-  width: 100%;
-  height: 100%;
-
-  font-size: 18px;
-  line-height: 1.56;
-  background: var(--overlay-color);
-  color: var(--primary-white-color);
+  overflow: hidden;
 }
 
 .projects__list-card {
@@ -603,8 +588,28 @@ h6 {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+/* animation */
+
+.projects__list-card-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 63px 24px;
+
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.56;
+  background: var(--overlay-color);
+  color: var(--primary-white-color);
+
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function);
+}
+
 .projects__list-card:hover .projects__list-card-label {
-  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects__list-card-img {
