@@ -140,6 +140,10 @@ h6 {
   color: var(--accent-color);
 }
 
+.navigation__list-link--active {
+  color: var(--accent-color);
+}
+
 .navigation__list-link::after {
   content: '';
   display: flex;
@@ -156,10 +160,6 @@ h6 {
 .navigation__list-link--active::after,
 .navigation__list-item:hover .navigation__list-link::after {
   opacity: 1;
-}
-
-.navigation__list-link--active {
-  color: var(--accent-color);
 }
 
 /* CONTACTS */
@@ -639,6 +639,10 @@ h6 {
 }
 
 .projects__list-card:hover .projects__list-card-label {
+  transform: translateY(0);
+}
+
+.projects__list-card-link:focus .projects__list-card-label {
   transform: translateY(0);
 }
 
