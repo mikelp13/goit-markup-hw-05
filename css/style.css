@@ -32,6 +32,10 @@ ul {
   margin: 0;
 }
 
+img {
+  display: block;
+}
+
 h1,
 h2,
 h3,
@@ -311,10 +315,6 @@ h6 {
   background-color: var(--transparent-color);
 }
 
-.about__list-img {
-  display: block;
-}
-
 /* TEAM SECTION */
 
 .team {
@@ -338,10 +338,6 @@ h6 {
 
 .team__list-card + .team__list-card {
   margin-left: 30px;
-}
-
-.team__list-card-img {
-  display: block;
 }
 
 .team__list-card-title {
@@ -628,7 +624,6 @@ h6 {
 }
 
 .projects__list-card-img {
-  display: block;
   max-width: 100%;
   height: auto;
 }
