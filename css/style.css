@@ -15,6 +15,7 @@
   --transparent-color: rgba(47, 48, 58, 0.8);
   --backdrop-color: rgba(0, 0, 0, 0.2);
   --close-btn-color: rgba(0, 0, 0, 0.1);
+  --svg-icons-color: #afb1b8;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -185,11 +186,17 @@ h6 {
 .contacts-list__link:hover,
 .contacts-list__link:focus {
   color: var(--accent-color);
-  --color3: var(--accent-color);
 }
 
 .contacts-logo {
   margin-right: 10px;
+  fill: var(--svg-icons-color);
+
+  transition: fill 250ms var(--timing-function);
+}
+.contacts-list__link:focus .contacts-logo,
+.contacts-list__link:hover .contacts-logo {
+  fill: var(--accent-color);
 }
 
 /* HERO SECTION */
@@ -413,17 +420,24 @@ h6 {
   border: 1px solid var(--clients-border-color);
   border-radius: 4px;
 
-  transition: 250ms var(--timing-function);
+  transition: border 250ms var(--timing-function);
 }
 
 .clients__logo {
   align-self: center;
+  fill: var(--svg-icons-color);
+
+  transition: fill 250ms var(--timing-function);
+}
+
+.clients__link:focus .clients__logo,
+.clients__link:hover .clients__logo {
+  fill: var(--accent-color);
 }
 
 .clients__link:focus,
 .clients__link:hover {
   border: 1px solid var(--accent-color);
-  --color4: var(--accent-color);
 }
 
 /* MODALS */
